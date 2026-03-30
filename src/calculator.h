@@ -1,9 +1,16 @@
 #pragma once
+#include "operators.h"
 
 class Calculator {
 private:
 	// stores the result of the most recent computation
 	int memory;
+
+	// object composition
+	Adder a;
+	Subtractor s;
+	Multiplier m;
+	Dividor d;
 public:
 	// initializes memory to 0
 	Calculator();
