@@ -7,19 +7,17 @@ Calculator::Calculator() : memory(0) {}
 // updates memory to contain the result, returns the result
 int Calculator::compute(char op, int left, int right) {
 	if (op == '+') {
-		memory = left + right;
+		// request forwarding
+		memory = a.compute(left, right);
 	}
 	else if (op == '-') {
-		memory = left - right;
+		memory = s.compute(left, right);
 	}
 	else if (op == '*') {
-		memory = left * right;
+		memory = m.compute(left, right);
 	}
 	else if (op == '/') {
-		if (right == 0) {
-			throw std::invalid_argument("divide by zero");
-		}
-		memory = left / right;
+		memory = d.compute(left, right);
 	}
 	else {
 		throw std::invalid_argument("invalid operator");

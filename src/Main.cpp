@@ -18,8 +18,8 @@ int main() {
 	cout << c.compute('*', 5, 5) << endl;
 	cout << c.compute('/', 5) << endl;
 	try {
-		cout << c.compute('/', 20, 0) << endl;
-		// cout << c.compute('^', 2, 4) << endl;
+		//cout << c.compute('/', 20, 0) << endl;
+		cout << c.compute('^', 2, 4) << endl;
 	}
 	catch (invalid_argument& e) {
 		cout << e.what() << endl;

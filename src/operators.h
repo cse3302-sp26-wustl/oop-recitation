@@ -1,4 +1,9 @@
 #pragma once
+class Operator {
+public:
+	virtual int compute(int, int) = 0;
+	virtual ~Operator() = default;
+};
 
 class Adder {
 public:
