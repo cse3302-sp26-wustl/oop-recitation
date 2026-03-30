@@ -1,3 +1,3 @@
 # author: d.horn
 
-add_executable(studio Main.cpp)
+add_executable(studio Main.cpp "calculator.h" "calculator.cpp" "operators.h" "operators.cpp")
