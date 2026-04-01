@@ -5,22 +5,28 @@ public:
 	virtual ~Operator() = default;
 };
 
-class Adder {
+class Adder : public Operator {
 public:
-	int compute(int, int);
+	int compute(int, int) override;
 };
 
-class Subtractor {
+class Subtractor : public Operator{
 public:
-	int compute(int, int);
+	int compute(int, int) override;
 };
 
-class Multiplier {
+class Multiplier : public Operator{
 public:
-	int compute(int, int);
+	int compute(int, int) override;
 };
 
-class Dividor {
+class Dividor : public Operator {
 public:
-	int compute(int, int);
+	int compute(int, int) override;
+};
+
+
+class Exponentiator : public Operator {
+public :
+	int compute(int, int) override;
 };
