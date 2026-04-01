@@ -1,16 +1,15 @@
 #pragma once
 #include "operators.h"
+#include<map>
 
 class Calculator {
 private:
 	// stores the result of the most recent computation
 	int memory;
 
-	// object composition
-	Adder a;
-	Subtractor s;
-	Multiplier m;
-	Dividor d;
+	std::map<char, Operator*> operators;
+
+	Operator* getOperator(char);
 public:
 	// initializes memory to 0
 	Calculator();
@@ -22,5 +21,6 @@ public:
 	// same as above, however uses memory as the first operand
 	int compute(char, int);
 
-	// Operator* getOperator(char);
+	// dependency injection!
+	bool addOperator(char, Operator*);
 };

@@ -13,13 +13,24 @@ using namespace std;
 
 int main() {
 	Calculator c;
-	cout << c.compute('+', 10, 5) << endl;
-	cout << c.compute('-', 7) << endl;
-	cout << c.compute('*', 5, 5) << endl;
-	cout << c.compute('/', 5) << endl;
+	Adder a;
+	Subtractor s;
+	Multiplier m;
+	Dividor d;
+	Exponentiator e;
+	// inject operators into calculator...
+	c.addOperator('-', &a);
+	c.addOperator('+', &s);
+	c.addOperator('*', &m);
+	c.addOperator('/', &d);
+	c.addOperator('^', &e);
+
 	try {
-		//cout << c.compute('/', 20, 0) << endl;
-		 cout << c.compute('^', 2, 4) << endl;
+		cout << c.compute('+', 10, 5) << endl;
+		cout << c.compute('-', 7) << endl;
+		cout << c.compute('*', 5, 5) << endl;
+		cout << c.compute('/', 5) << endl;
+		cout << c.compute('^', 2, 4) << endl;
 	}
 	catch (invalid_argument& e) {
 		cout << e.what() << endl;
