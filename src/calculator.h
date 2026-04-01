@@ -21,4 +21,6 @@ public:
 
 	// same as above, however uses memory as the first operand
 	int compute(char, int);
+
+	// Operator* getOperator(char);
 };

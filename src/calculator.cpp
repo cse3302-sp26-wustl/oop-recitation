@@ -29,3 +29,23 @@ int Calculator::compute(char op, int left, int right) {
 int Calculator::compute(char op, int right) {
 	return compute(op, memory, right);
 }
+
+/*
+Operator* Calculator::getOperator(char o) {
+	if (o == '+') {
+		return &a;
+	}
+	else if (o == '-') {
+		return &s;
+	}
+	else if (o == '*') {
+		return &m;
+	}
+	else if (o == '/') {
+		return &d;
+	}
+	else {
+		return nullptr;
+	}
+}
+*/
