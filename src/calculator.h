@@ -1,11 +1,14 @@
 #pragma once
 #include "operators.h"
+#include "operatorfactories.h"
 #include<map>
 
 class Calculator {
 private:
 	// stores the result of the most recent computation
 	int memory;
+	AbstractOperatorFactory *my_factory;
+
 	// object composition - calculator is composed of adder, subtractor, ...
 	// dependencies: calculator depends on adder, subtractor, ...
 	std::map<char, Operator*> operators;
@@ -15,7 +18,7 @@ private:
 
 public:
 	// initializes memory to 0
-	Calculator();
+	Calculator(AbstractOperatorFactory*);
 
 	// performs the computation given by the first parameter on the operands,
 	// updates memory to contain the result, returns the result
@@ -26,4 +29,6 @@ public:
 
 	// dependency injection!
 	bool addOperator(char, Operator*);
+
+	void createOp(char);
 };

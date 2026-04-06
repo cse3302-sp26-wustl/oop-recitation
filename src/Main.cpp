@@ -12,17 +12,10 @@
 using namespace std;
 
 int main() {
-	Calculator c;
-	Adder a;
-	Subtractor s;
-	Multiplier m;
-	Dividor d;
-	Exponentiator e;
-	c.addOperator('-', &a);
-	c.addOperator('+', &s);
-	c.addOperator('*', &m);
-	c.addOperator('/', &d);
-	c.addOperator('^', &e);
+	AddOperatorFactory f;
+	Calculator c(&f);
+	c.createOp('+');
+	c.createOp('-');
 	try {
 		cout << c.compute('+', 10, 5) << endl;
 		cout << c.compute('-', 7) << endl;

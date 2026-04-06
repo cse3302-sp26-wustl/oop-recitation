@@ -1,7 +1,7 @@
 #include "calculator.h"
 #include<stdexcept>
 
-Calculator::Calculator() : memory(0) {
+Calculator::Calculator(AbstractOperatorFactory *factory) : memory(0), my_factory(factory) {
 }
 
 // performs the computation given by the first parameter on the operands,
@@ -37,5 +37,11 @@ bool Calculator::addOperator(char op, Operator* o) {
 	return ret.second;
 }
 
+void Calculator::createOp(char op_symbol) {
+	Operator* op = my_factory->createOperator(op_symbol);
+	if (my_factory != nullptr) {
+		addOperator(op_symbol, op );
+	}
+}
 
 
