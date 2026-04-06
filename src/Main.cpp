@@ -12,7 +12,8 @@
 using namespace std;
 
 int main() {
-	AddingCalculator c;
+	AllOperatorFactory factory;
+	Calculator c(&factory);
 	c.createOp('+');
 	c.createOp('-');
 

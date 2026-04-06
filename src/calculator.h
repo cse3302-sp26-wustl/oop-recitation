@@ -1,5 +1,6 @@
 #pragma once
 #include "operators.h"
+#include "operatorfactories.h"
 #include<map>
 
 class Calculator {
@@ -9,10 +10,12 @@ private:
 
 	std::map<char, Operator*> operators;
 
+	AbstractOperatorFactory *my_factory;
+
 	Operator* getOperator(char);
 public:
 	// initializes memory to 0
-	Calculator();
+	Calculator(AbstractOperatorFactory *);
 
 	// performs the computation given by the first parameter on the operands,
 	// updates memory to contain the result, returns the result
@@ -24,10 +27,5 @@ public:
 	// dependency injection!
 	bool addOperator(char, Operator*);
 
-	virtual Operator* createOp(char) = 0;
-};
-
-class AddingCalculator : public Calculator {
-public:
-	Operator* createOp(char) override;
+	Operator* createOp(char);
 };
