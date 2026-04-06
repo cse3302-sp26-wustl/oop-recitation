@@ -23,4 +23,11 @@ public:
 
 	// dependency injection!
 	bool addOperator(char, Operator*);
+
+	virtual Operator* createOp(char) = 0;
+};
+
+class AddingCalculator : public Calculator {
+public:
+	Operator* createOp(char) override;
 };

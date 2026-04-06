@@ -37,3 +37,12 @@ bool Calculator::addOperator(char op, Operator* o) {
 	return ret.second;
 }
 
+Operator *AddingCalculator::createOp(char op_symbol) {
+	if (op_symbol == '+') {
+		Adder *op = new Adder();
+		addOperator(op_symbol, op);
+		return op;
+	}
+	return nullptr;
+}
+

@@ -12,18 +12,9 @@
 using namespace std;
 
 int main() {
-	Calculator c;
-	Adder a;
-	Subtractor s;
-	Multiplier m;
-	Dividor d;
-	Exponentiator e;
-	// inject operators into calculator...
-	c.addOperator('-', &a);
-	c.addOperator('+', &s);
-	c.addOperator('*', &m);
-	c.addOperator('/', &d);
-	c.addOperator('^', &e);
+	AddingCalculator c;
+	c.createOp('+');
+	c.createOp('-');
 
 	try {
 		cout << c.compute('+', 10, 5) << endl;
