@@ -33,7 +33,9 @@ double Calculator::compute(char op, double left, double right) {
 	Operator* o = getOperator(op);
 	if (o != nullptr) {
 		// What to do here????
-		fp_memory = o->compute(left, right);
+		DoubleOperatorVisitor v(left, right);
+		o->accept(&v);
+		fp_memory = v.getResult();
 	}
 	else {
 		throw std::invalid_argument("invalid operator");

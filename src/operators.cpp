@@ -1,4 +1,5 @@
 #include "operators.h"
+#include "operatorvisitors.h"
 #include <stdexcept>
 
 int Adder::compute(int left, int right) {

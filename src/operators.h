@@ -1,10 +1,12 @@
 #pragma once
-#include "operatorvisitors.h"
+//#include "operatorvisitors.h"
+class OperatorVisitor;  // forward declaration
 
 
 class Operator {
 public:
 	virtual int compute(int, int) = 0;
+	// visitor pattern
 	virtual void accept(OperatorVisitor*) = 0;
 	virtual ~Operator() = default;
 };
