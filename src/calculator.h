@@ -17,6 +17,8 @@ public:
 	// initializes memory to 0
 	Calculator(AbstractOperatorFactory *);
 
+	~Calculator();
+
 	// performs the computation given by the first parameter on the operands,
 	// updates memory to contain the result, returns the result
 	int compute(char, int, int);

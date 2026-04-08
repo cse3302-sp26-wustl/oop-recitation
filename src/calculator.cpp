@@ -4,6 +4,12 @@
 Calculator::Calculator(AbstractOperatorFactory *factory) : memory(0), my_factory(factory) {
 }
 
+Calculator::~Calculator() {
+	for (auto p : operators) {
+		delete p.second;
+	}
+}
+
 // performs the computation given by the first parameter on the operands,
 // updates memory to contain the result, returns the result
 int Calculator::compute(char op, int left, int right) {
