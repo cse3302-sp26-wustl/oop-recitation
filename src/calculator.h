@@ -27,5 +27,5 @@ public:
 	// dependency injection!
 	bool addOperator(char, Operator*);
 
-	Operator* createOp(char);
+	bool createOp(char);
 };

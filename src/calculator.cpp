@@ -37,11 +37,12 @@ bool Calculator::addOperator(char op, Operator* o) {
 	return ret.second;
 }
 
-Operator *Calculator::createOp(char op_symbol) {
+bool Calculator::createOp(char op_symbol) {
 	Operator* op = my_factory->createOperator(op_symbol);
 	if (op != nullptr) {
-		addOperator(op_symbol, op);
+		return addOperator(op_symbol, op);
 	}
+	return false;
 }
 
 
