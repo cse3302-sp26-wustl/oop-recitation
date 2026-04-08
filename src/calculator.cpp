@@ -1,4 +1,5 @@
 #include "calculator.h"
+#include "operatorvisitors.h"
 #include<stdexcept>
 
 Calculator::Calculator(AbstractOperatorFactory *factory) : memory(0), fp_memory(0.0), my_factory(factory) {
@@ -33,7 +34,9 @@ double Calculator::compute(char op, double left, double right) {
 	Operator* o = getOperator(op);
 	if (o != nullptr) {
 		// TODO - what to do here?
-		fp_memory = o->compute(left, right);
+		DoubleOperatorVisitor v(left, right);
+		o->accept(&v);
+		fp_memory = v.getResult();
 	}
 	else {
 		throw std::invalid_argument("invalid operator");
