@@ -39,7 +39,7 @@ bool Calculator::addOperator(char op, Operator* o) {
 
 void Calculator::createOp(char op_symbol) {
 	Operator* op = my_factory->createOperator(op_symbol);
-	if (my_factory != nullptr) {
+	if (op != nullptr) {
 		addOperator(op_symbol, op );
 	}
 }
