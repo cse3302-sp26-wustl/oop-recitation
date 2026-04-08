@@ -7,6 +7,7 @@ class Calculator {
 private:
 	// stores the result of the most recent computation
 	int memory;
+	double fp_memory;
 
 	std::map<char, Operator*> operators;
 
@@ -25,6 +26,9 @@ public:
 
 	// same as above, however uses memory as the first operand
 	int compute(char, int);
+
+	double compute(char, double, double);
+	double compute(char, double);
 
 	// dependency injection!
 	bool addOperator(char, Operator*);

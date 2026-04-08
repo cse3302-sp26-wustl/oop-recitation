@@ -20,9 +20,7 @@ int main() {
 	try {
 		cout << c.compute('+', 10, 5) << endl;
 		cout << c.compute('-', 7) << endl;
-		cout << c.compute('*', 5, 5) << endl;
-		cout << c.compute('/', 5) << endl;
-		cout << c.compute('^', 2, 4) << endl;
+		cout << c.compute('+', 10.5, 5.5) << endl;
 	}
 	catch (invalid_argument& e) {
 		cout << e.what() << endl;
