@@ -30,5 +30,5 @@ public:
 	// dependency injection!
 	bool addOperator(char, Operator*);
 
-	void createOp(char);
+	bool createOp(char);
 };
