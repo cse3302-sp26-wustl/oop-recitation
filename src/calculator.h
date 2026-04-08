@@ -7,6 +7,7 @@ class Calculator {
 private:
 	// stores the result of the most recent computation
 	int memory;
+	double fp_memory;
 	AbstractOperatorFactory *my_factory;
 
 	// object composition - calculator is composed of adder, subtractor, ...
@@ -27,6 +28,9 @@ public:
 
 	// same as above, however uses memory as the first operand
 	int compute(char, int);
+
+	double compute(char, double, double);
+	double compute(char, double);
 
 	// dependency injection!
 	bool addOperator(char, Operator*);
