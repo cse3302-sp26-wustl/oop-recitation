@@ -1,4 +1,5 @@
 #include "operatorfactories.h"
+#include "operatorproxy.h"
 
 Operator* AllOperatorFactory::createOperator(char op) {
 	if (op == '+') {
@@ -8,13 +9,13 @@ Operator* AllOperatorFactory::createOperator(char op) {
 		return new Subtractor();
 	}
 	if (op == '*') {
-		return new Multiplier();
+		return new OperatorCache(new Multiplier());
 	}
 	if (op == '/') {
 		return new Dividor();
 	}
 	if (op == '^') {
-		return new Exponentiator();
+		return new OperatorCache(new Exponentiator());
 	}
 	return nullptr;
 }
